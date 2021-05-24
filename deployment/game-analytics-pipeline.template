@@ -619,6 +619,8 @@ Resources:
               Type: string
             - Name: application_name
               Type: string
+            - Name: autodetected_country
+              Type: string
             - Name: event_data 
               Type: string
             - Name: metadata
@@ -1616,7 +1618,9 @@ Resources:
                             ""aws_ga_api_validated_flag"": true,
                             ""aws_ga_api_requestId"": ""$context.requestId"",
                             ""aws_ga_api_requestTimeEpoch"": $context.requestTimeEpoch,
-                            ""application_id"": ""$util.escapeJavaScript($input.params().path.get('applicationId'))""
+                            ""application_id"": ""$util.escapeJavaScript($input.params().path.get('applicationId'))"",
+                            ""autodetected_country"": ""$input.params('CloudFront-Viewer-Country')"",
+                            ""aws_ga_api_sourceIp"": ""$context.identity.sourceIp""
                           }" )
                           {
                             "Data": "$util.base64Encode($output)",

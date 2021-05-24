@@ -68,6 +68,7 @@ class Event {
         });
       }
       const applicationId = input.application_id;
+      const autodetected_country = input.autodetected_country;
       const event = input.event;
       
       // Add a processing timestamp and the Lambda Request Id to the event metadata
@@ -131,6 +132,7 @@ class Event {
         
         transformed_event.application_name = String(application.application_name);
         transformed_event.application_id = String(applicationId);
+        transformed_event.autodetected_country = String(autodetected_country);
         
         return Promise.resolve({
           recordId: recordId,
