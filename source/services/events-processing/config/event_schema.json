@@ -3,7 +3,7 @@
 	"title": "Game Analytics JSON Event Schema",
 	"description": "Format of events that are ingested to the AWS Game Analytics Pipeline",
 	"type": "object",
-	"additionalProperties": false,
+	"additionalProperties": true,
 	"properties": {
 		"event": { 
 			"$ref": "#/definitions/event"
